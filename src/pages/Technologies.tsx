@@ -19,14 +19,14 @@ const Technologies: React.FC = () => {
 
   return (
     <>
-      <ul data-testid="ul-techs">
+      <ul id="ul-techs">
         {technologies.map((tech) => (
-          <li data-testid={tech} key={tech}>
+          <li id={tech} key={tech}>
             {tech}
             {"  "}
             <button
               disabled={tech === "React"}
-              data-testid={`${tech}-btnn-delete`}
+              id={`${tech}-btnn-delete`}
               type="button"
               onClick={() => handleDelete(tech)}
             >
@@ -36,9 +36,9 @@ const Technologies: React.FC = () => {
         ))}
       </ul>
 
-      <form data-testid="form-add-tech" onSubmit={handleSubmit}>
+      <form id="form-add-tech" onSubmit={handleSubmit}>
         <input
-          data-testid="input-add-tech"
+          id="input-add-tech"
           type="text"
           value={newTech}
           onChange={(e) => setNewTech(e.target.value)}
