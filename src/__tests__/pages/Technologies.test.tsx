@@ -8,7 +8,7 @@ describe("Testing Technologies Page", () => {
     render(<Technologies />);
 
     userEvent.type(screen.getByRole("textbox"), "React  Native");
-    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.click(screen.getByRole("button", { name: /save/i }));
 
     expect(screen.getByText(/react native/i)).toBeTruthy();
   });
@@ -17,9 +17,9 @@ describe("Testing Technologies Page", () => {
     render(<Technologies />);
 
     userEvent.type(screen.getByRole("textbox"), "React  Native");
-    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.click(screen.getByRole("button", { name: /save/i }));
     userEvent.type(screen.getByRole("textbox"), "Flutter");
-    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.click(screen.getByRole("button", { name: /save/i }));
 
     expect(screen.getByRole("list").children.length).toBe(3);
   });
@@ -28,7 +28,7 @@ describe("Testing Technologies Page", () => {
     render(<Technologies />);
 
     userEvent.type(screen.getByRole("textbox"), "React  Native");
-    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.click(screen.getByRole("button", { name: /save/i }));
     userEvent.click(screen.getByTestId("React Native-btn-delete"));
 
     expect(screen.queryByText(/react native/i)).not.toBeInTheDocument();
@@ -39,7 +39,7 @@ describe("Testing Technologies Page", () => {
     render(<Technologies />);
 
     userEvent.type(screen.getByRole("textbox"), "React  Native");
-    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.click(screen.getByRole("button", { name: /save/i }));
 
     expect(screen.getByTestId("React-btn-delete")).toBeDisabled();
     expect(screen.getByTestId("React Native-btn-delete")).not.toBeDisabled();

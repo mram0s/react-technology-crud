@@ -43,7 +43,7 @@ const Technologies: React.FC = () => {
           value={newTech}
           onChange={(e) => setNewTech(e.target.value)}
         />
-        <button type="submit">Salvar</button>
+        <button type="submit">Save</button>
       </form>
     </>
   );
