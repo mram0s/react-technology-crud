@@ -20,12 +20,12 @@ const Technologies: React.FC = () => {
   return (
     <>
       <ul id="ul-techs">
-        {technologies.map((tech) => (
+        {technologies.map((tech, index) => (
           <li id={tech} key={tech}>
             {tech}
             {"  "}
             <button
-              disabled={tech === "React"}
+              disabled={index === 0}
               data-testid={`${tech}-btn-delete`}
               type="button"
               onClick={() => handleDelete(tech)}

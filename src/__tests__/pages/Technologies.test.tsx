@@ -35,7 +35,7 @@ describe("Testing Technologies Page", () => {
     expect(screen.getByRole("list").children.length).toBe(1);
   });
 
-  it("button delete should be disable only for React technology", () => {
+  it("button delete should be disable only for first technology on list", () => {
     render(<Technologies />);
 
     userEvent.type(screen.getByRole("textbox"), "React  Native");
