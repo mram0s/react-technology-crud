@@ -14,4 +14,4 @@ $ yarn test
 $ yarn start
 
 
-# Application available on 3000 port - http://localhost:3000
+Application available on 3000 port - http://localhost:3000
