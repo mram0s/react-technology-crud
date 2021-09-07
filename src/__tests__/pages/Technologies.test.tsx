@@ -34,4 +34,14 @@ describe("Testing Technologies Page", () => {
     expect(screen.queryByText(/react native/i)).not.toBeInTheDocument();
     expect(screen.getByRole("list").children.length).toBe(1);
   });
+
+  it("button delete should be disable only for React technology", () => {
+    render(<Technologies />);
+
+    userEvent.type(screen.getByRole("textbox"), "React  Native");
+    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+
+    expect(screen.getByTestId("React-btn-delete")).toBeDisabled();
+    expect(screen.getByTestId("React Native-btn-delete")).not.toBeDisabled();
+  });
 });
