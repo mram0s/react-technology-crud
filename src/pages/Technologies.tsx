@@ -26,7 +26,7 @@ const Technologies: React.FC = () => {
             {"  "}
             <button
               disabled={tech === "React"}
-              id={`${tech}-btnn-delete`}
+              data-testid={`${tech}-btn-delete`}
               type="button"
               onClick={() => handleDelete(tech)}
             >

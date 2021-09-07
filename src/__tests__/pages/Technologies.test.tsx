@@ -23,4 +23,15 @@ describe("Testing Technologies Page", () => {
 
     expect(screen.getByRole("list").children.length).toBe(3);
   });
+
+  it("should de able to delete one tech", () => {
+    render(<Technologies />);
+
+    userEvent.type(screen.getByRole("textbox"), "React  Native");
+    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.click(screen.getByTestId("React Native-btn-delete"));
+
+    expect(screen.queryByText(/react native/i)).not.toBeInTheDocument();
+    expect(screen.getByRole("list").children.length).toBe(1);
+  });
 });
