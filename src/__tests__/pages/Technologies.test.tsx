@@ -12,4 +12,15 @@ describe("Testing Technologies Page", () => {
 
     expect(screen.getByText(/react native/i)).toBeTruthy();
   });
+
+  it("should be able to list three techs", () => {
+    render(<Technologies />);
+
+    userEvent.type(screen.getByRole("textbox"), "React  Native");
+    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+    userEvent.type(screen.getByRole("textbox"), "Flutter");
+    userEvent.click(screen.getByRole("button", { name: /salvar/i }));
+
+    expect(screen.getByRole("list").children.length).toBe(3);
+  });
 });
